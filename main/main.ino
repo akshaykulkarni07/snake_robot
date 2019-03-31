@@ -1,3 +1,14 @@
+/* Extreme values and pin number for each servo
+OCR0B = 20; // servo2
+OCR0A = 20; // servo4
+OCR1B = 28; // servo3
+OCR1A = 15; // servo1
+OCR0B = 35;
+OCR0A = 35;
+OCR1B = 15;
+OCR1A = 28;
+*/
+ 
 #include <avr/io.h>
 #include <util/delay.h>
 
@@ -32,15 +43,23 @@ int main(void)
   setup_timer1_pwm();
   while (1)
   {
-    OCR0B = 13;
-    OCR0A = 13;
-    OCR1B = 13;
-    OCR1A = 13;
+//    OCR0B = 20; // servo2
+//    OCR0A = 20; // servo4
+    OCR1B = 24; // servo3
+    OCR1A = 18; // servo1
     _delay_ms(500);
-    OCR0B = 25;
-    OCR0A = 25;
-    OCR1B = 25;
-    OCR1A = 25;
+
+    OCR1B = 21;
+    OCR1A = 21;
+    _delay_ms(500);
+//    OCR0B = 35;
+//    OCR0A = 35;
+    OCR1B = 18;
+    OCR1A = 24;
+    _delay_ms(500);
+
+    OCR1B = 21;
+    OCR1A = 21;
     _delay_ms(500);
   }
 }
